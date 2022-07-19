@@ -1,0 +1,73 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.loginStyle{
+  max-width: 500px;
+  margin: auto;
+}
+.registerStyle{
+  max-width: 500px;
+  margin: auto;
+}
+.cardo{
+  overflow: hidden;
+  height: 580px;
+  width: 400px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transition: 1s;
+  
+}
+.cardo:hover{
+  transform: scale(1.2);
+  z-index: 1;
+}
+.hover-detail{
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  left:0;
+  bottom:0;
+  transform: translateY(100%);
+  background-color: rgba(255, 255, 255, 0.89);
+  transition: 1s;
+  padding: 1rem;
+  
+}
+
+.cardo:hover .hover-detail{
+  height: max-content;
+  transform: translateY(0%);
+  
+}
+.card-img-top{
+  object-fit: cover;
+  width: 300px;
+  height: auto;
+}
+iframe{
+  width: 100%;
+  height: 600px;
+}
+.overview{
+  font-weight: 700;
+  display: block;
+}
+
