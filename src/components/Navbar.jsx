@@ -5,13 +5,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import { logout } from '../firebase/firebase';
 
 
 function OffcanvasExample() {
-    const {searching, setSearching,searchingMovies,user} = useContext(AppContext);
+    const { searching, setSearching, searchingMovies, user } = useContext(AppContext);
     return (
         <>
             {['lg'].map((expand) => (
@@ -30,22 +30,23 @@ function OffcanvasExample() {
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body>
-                                <Nav className="justify-content-end flex-grow-1 pe-3">
+                                { user.email ? <Nav className="justify-content-end flex-grow-1 pe-3">
+                                <NavLink to="#" className='nav-link text-info' style={{cursor:"default", userSelect:"none"}}>{user.email}</NavLink>
+                                </Nav> :<Nav className="justify-content-end flex-grow-1 pe-3">
                                     <NavLink to="/login" className="nav-link">Login</NavLink>
                                     <NavLink to="/register" className="nav-link">Register</NavLink>
-                                </Nav>
+                                </Nav>}
                                 <Form className="d-flex" onSubmit={searchingMovies}>
                                     <Form.Control
                                         type="search"
                                         placeholder="Search"
                                         className="me-2"
                                         aria-label="Search"
-                                        onChange={(e)=> setSearching(e.target.value)}
+                                        onChange={(e) => setSearching(e.target.value)}
                                         value={searching}
                                     />
                                     <Button variant="outline-success">Search</Button>
                                 </Form>
-                                {/* <p>{user.email}</p> */}
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
                                     <NavLink to="/" className="nav-link" onClick={logout}>Logout</NavLink>
                                 </Nav>

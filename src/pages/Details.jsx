@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
-import { AppContext } from '../context/AppContext'
+import React, { useContext, useEffect } from 'react';
+import { AppContext } from '../context/AppContext';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 
 const Details = () => {
-    const { videoKey, detailMovie } = useContext(AppContext);
+    const { videoKey, detailMovie, showDetails } = useContext(AppContext);
     console.log(detailMovie);
     const IMG_API = "https://image.tmdb.org/t/p/w1280";
 
