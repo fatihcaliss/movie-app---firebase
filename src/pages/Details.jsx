@@ -7,6 +7,10 @@ const Details = () => {
     const { videoKey, detailMovie, showDetails } = useContext(AppContext);
     console.log(detailMovie);
     const IMG_API = "https://image.tmdb.org/t/p/w1280";
+    useEffect(() => {
+      showDetails();
+    }, [])
+    
 
     return (
         <div className='container'>
